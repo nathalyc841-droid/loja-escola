@@ -1,0 +1,418 @@
+
+/* ==========================================
+   IDENTIDADE VISUAL — LAZÚLI
+========================================== */
+
+:root {
+  --surface: #f6f1e8;
+  --ink: #2d2422;
+  --muted: #766b63;
+  --border: #ded3c4;
+
+  --accent: #702c36;
+  --accent-dark: #321b25;
+  --accent-soft: #e8d9b5;
+
+  --footer-text: #f2e8d8;
+  --footer-muted: #c5b6a5;
+  --footer-gold: #b99a68;
+}
+
+/* ==========================================
+   CONFIGURAÇÕES GERAIS
+========================================== */
+
+body {
+  color: var(--ink);
+  background: #fff;
+}
+
+/* Link de acessibilidade para pular ao conteúdo */
+
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 1rem;
+  z-index: 1000;
+  padding: .75rem 1rem;
+  background: #000;
+  color: #fff;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Cabeçalho */
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+}
+
+/* ==========================================
+   IDENTIDADE DA MARCA
+========================================== */
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-lazuli {
+  width: 65px;
+  height: auto;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+
+/* ==========================================
+   DESTAQUE PRINCIPAL
+========================================== */
+
+.hero {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* ==========================================
+   CARROSSEL
+========================================== */
+
+.carousel {
+  width: 75%;
+  max-width: 950px;
+  margin: 30px auto;
+}
+
+.carousel-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+/* ==========================================
+   CATÁLOGO DE PRODUTOS
+========================================== */
+
+.product-filter {
+  width: min(100%, 320px);
+}
+
+.product-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 16px rgba(50, 27, 37, .08);
+}
+
+.product-illustration {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 290px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.product-illustration img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ==========================================
+   DETALHES DO PRODUTO
+========================================== */
+
+.product-detail-illustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 350px;
+  height: 350px;
+  padding: 20px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.product-detail-illustration img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Preços */
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.price-large {
+  font-size: 2rem;
+}
+
+/* Quantidade */
+
+.quantity-field {
+  max-width: 120px;
+}
+
+/* ==========================================
+   RESUMOS E INFORMAÇÕES
+========================================== */
+
+.learning-note,
+.summary-box {
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.summary-box {
+  position: sticky;
+  top: 1rem;
+}
+
+/* ==========================================
+   PÁGINA DE CONFIRMAÇÃO
+========================================== */
+
+.success-panel {
+  max-width: 720px;
+  padding: 3rem 1.5rem;
+}
+
+.success-icon {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.order-data {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.order-data > div {
+  padding: 1rem;
+  border: 1px solid var(--border);
+}
+
+.order-data dt {
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+.order-data dd {
+  margin: .25rem 0 0;
+  font-weight: 700;
+}
+
+/* ==========================================
+   RODAPÉ
+========================================== */
+
+.site-footer {
+  margin-top: 20px;
+  padding: 30px 0 15px;
+  background-color: var(--accent-dark);
+  color: var(--footer-text);
+}
+
+/* Área principal */
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.5fr;
+  gap: 35px;
+  padding-bottom: 22px;
+}
+
+/* Marca */
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  color: var(--footer-text);
+  text-decoration: none;
+}
+
+.footer-logo img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.footer-logo span {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.footer-brand p,
+.footer-about p {
+  max-width: 300px;
+  margin-bottom: 0;
+  color: var(--footer-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Navegação e informações */
+
+.footer-navigation,
+.footer-about {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-navigation h3,
+.footer-about h3 {
+  margin-bottom: 2px;
+  color: var(--footer-gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+}
+
+.footer-navigation a {
+  color: var(--footer-muted);
+  font-size: 13px;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.footer-navigation a:hover {
+  color: var(--footer-text);
+}
+
+/* Assinatura inferior */
+
+.footer-bottom {
+  padding-top: 14px;
+  border-top: 1px solid #705443;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin-bottom: 5px;
+  color: var(--footer-gold);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.footer-bottom span {
+  color: var(--footer-muted);
+  font-size: 11px;
+}
+
+/* ==========================================
+   ACESSIBILIDADE — FOCO
+========================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--footer-gold);
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 768px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .site-footer {
+    padding: 30px 0 15px;
+  }
+
+  .carousel {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .brand-name {
+    font-size: 1.7rem;
+  }
+
+  .logo-lazuli {
+    width: 55px;
+  }
+
+  .product-detail-illustration {
+    min-height: 280px;
+    height: 280px;
+  }
+
+  .success-panel {
+    padding: 2rem 1rem;
+  }
+
+  .summary-box {
+    position: static;
+  }
+}
+
+/* ==========================================
+   MOVIMENTO REDUZIDO
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

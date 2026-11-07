@@ -1,0 +1,402 @@
+
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+    content="Descubra a Lazúli: um catálogo de relíquias extraordinárias, objetos curiosos e criações incomuns.">
+
+  <title>Lazúli | Relíquias extraordinárias</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg" aria-label="Navegação principal">
+
+      <div class="container">
+
+        <a class="navbar-brand brand-lockup" href="index.html">
+          <img
+            src="imagem loja escola/logo.png"
+            alt="Lazúli"
+            class="logo-lazuli">
+
+          <span class="brand-name">Lazúli</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal"
+          aria-expanded="false"
+          aria-label="Abrir menu">
+
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">
+                Produtos
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="checkout.html">
+                Finalizar compra
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- CARROSSEL -->
+    <div
+      id="carouselExampleFade"
+      class="carousel slide carousel-fade"
+      data-bs-ride="carousel">
+
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <img
+            src="imagem loja escola/catalogo1.jpg"
+            class="d-block w-100"
+            alt="Coleção de produtos extraordinários da Lazúli">
+        </div>
+
+        <div class="carousel-item">
+          <img
+            src="imagem loja escola/catalogo2.jpg"
+            class="d-block w-100"
+            alt="Objetos curiosos e relíquias do catálogo Lazúli">
+        </div>
+
+        <div class="carousel-item">
+          <img
+            src="imagem loja escola/catalago3.jpg"
+            class="d-block w-100"
+            alt="Descubra criações incomuns da Lazúli">
+        </div>
+
+      </div>
+
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleFade"
+        data-bs-slide="prev"
+        aria-label="Imagem anterior">
+
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Imagem anterior</span>
+      </button>
+
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleFade"
+        data-bs-slide="next"
+        aria-label="Próxima imagem">
+
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próxima imagem</span>
+      </button>
+
+    </div>
+
+    <!-- VITRINE DE PRODUTOS -->
+    <section class="container py-5" aria-labelledby="titulo-produtos">
+
+      <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+
+        <div>
+          <h2 id="titulo-produtos">Edição limitada</h2>
+          <p class="text-secondary mb-0">Coleção atemporal</p>
+        </div>
+
+        <div class="product-filter">
+          <label for="filtroProduto" class="form-label">
+            Buscar por relíquias
+          </label>
+
+          <input
+            id="filtroProduto"
+            class="form-control"
+            type="search"
+            placeholder="Ex: garfo"
+            autocomplete="off">
+        </div>
+
+      </div>
+
+      <div class="row g-4" id="listaProdutos">
+
+        <!-- PRODUTO 1 -->
+        <article class="col-sm-6 col-lg-4 product-item"
+          data-name="Garfo Aquecedor de Bolso">
+
+          <div class="card h-100 product-card">
+
+            <div class="product-illustration" aria-hidden="true">
+              <img src="imagem loja escola/garfo.jpeg" alt="">
+            </div>
+
+            <div class="card-body">
+              <p class="small text-secondary mb-1">
+                Utensílios extraordinários
+              </p>
+
+              <h3 class="h5">Garfo Aquecedor de Bolso</h3>
+
+              <p>
+                Um garfo portátil que aquece alimentos e ajuda a mantê-los aquecidos.
+              </p>
+
+              <p class="price">R$ 75,00</p>
+
+              <a class="btn btn-dark" href="produto.html?id=1">
+                Ver relíquia
+              </a>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- PRODUTO 2 -->
+        <article class="col-sm-6 col-lg-4 product-item"
+          data-name="Rolo de Papel para Presentes Infinitos">
+
+          <div class="card h-100 product-card">
+
+            <div class="product-illustration" aria-hidden="true">
+              <img src="imagem loja escola/papel.jpeg" alt="">
+            </div>
+
+            <div class="card-body">
+              <p class="small text-secondary mb-1">
+                Embalagens fantásticas
+              </p>
+
+              <h3 class="h5">Rolo de Papel para Presentes Infinitos</h3>
+
+              <p>
+                Um rolo expansível capaz de embrulhar presentes de qualquer tamanho.
+              </p>
+
+              <p class="price">R$ 1.200,00</p>
+
+              <a class="btn btn-dark" href="produto.html?id=2">
+                Ver relíquia
+              </a>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- PRODUTO 3 -->
+        <article class="col-sm-6 col-lg-4 product-item"
+          data-name="Abajur Monocromático">
+
+          <div class="card h-100 product-card">
+
+            <div class="product-illustration" aria-hidden="true">
+              <img src="imagem loja escola/luminaria.jpeg" alt="">
+            </div>
+
+            <div class="card-body">
+              <p class="small text-secondary mb-1">
+                Iluminação extraordinária
+              </p>
+
+              <h3 class="h5">Abajur Monocromático</h3>
+
+              <p>
+                Um abajur que converte as cores em tons de preto e branco.
+              </p>
+
+              <p class="price">R$ 8.990,00</p>
+
+              <a class="btn btn-dark" href="produto.html?id=3">
+                Ver relíquia
+              </a>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- PRODUTO 4 -->
+        <article class="col-sm-6 col-lg-4 product-item"
+          data-name="Kit Utensílio para Formigas">
+
+          <div class="card h-100 product-card">
+
+            <div class="product-illustration" aria-hidden="true">
+              <img src="imagem loja escola/formiga.jpeg" alt="">
+            </div>
+
+            <div class="card-body">
+              <p class="small text-secondary mb-1">
+                Microequipamentos
+              </p>
+
+              <h3 class="h5">Kit Utensílio para Formigas</h3>
+
+              <p>
+                Uma bolsa de ferramentas desenvolvida para formigas realizarem pequenas manutenções.
+              </p>
+
+              <p class="price">R$ 37,00</p>
+
+              <a class="btn btn-dark" href="produto.html?id=4">
+                Ver relíquia
+              </a>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- PRODUTO 5 -->
+        <article class="col-sm-6 col-lg-4 product-item"
+          data-name="Drone">
+
+          <div class="card h-100 product-card">
+
+            <div class="product-illustration" aria-hidden="true">
+              <img src="imagem loja escola/drone.jpeg" alt="">
+            </div>
+
+            <div class="card-body">
+              <p class="small text-secondary mb-1">
+                Tecnologia sideral
+              </p>
+
+              <h3 class="h5">Drone</h3>
+
+              <p>
+                Um veículo autônomo de entregas desenvolvido para transportar encomendas pelo espaço.
+              </p>
+
+              <p class="price">R$ 248.000,00</p>
+
+              <a class="btn btn-dark" href="produto.html?id=5">
+                Ver relíquia
+              </a>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- PRODUTO 6 -->
+        <article class="col-sm-6 col-lg-4 product-item"
+          data-name="Pano de Neblina">
+
+          <div class="card h-100 product-card">
+
+            <div class="product-illustration" aria-hidden="true">
+              <img src="imagem loja escola/pano.jpeg" alt="">
+            </div>
+
+            <div class="card-body">
+              <p class="small text-secondary mb-1">
+                Vexis
+              </p>
+
+              <h3 class="h5">Pano de Neblina</h3>
+
+              <p>
+                Um pano de uso único que permite cobrir ou encobrir objetos com neblina.
+              </p>
+
+              <p class="price">R$ 14,00</p>
+
+              <a class="btn btn-dark" href="produto.html?id=6">
+                Ver relíquia
+              </a>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+
+      <p id="mensagemFiltro" class="mt-4" role="status" aria-live="polite"></p>
+
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+
+    <div class="container">
+
+      <div class="footer-main">
+
+        <div class="footer-brand">
+
+          <a href="index.html" class="footer-logo">
+            <img src="imagem loja escola/logo.png" alt="">
+            <span>Lazúli</span>
+          </a>
+
+          <p>
+            Relíquias extraordinárias para pessoas
+            que apreciam o incomum.
+          </p>
+
+        </div>
+
+        <div class="footer-navigation">
+          <h3>Explore</h3>
+          <a href="index.html">Produtos</a>
+          <a href="checkout.html">Finalizar compra</a>
+        </div>
+
+        <div class="footer-about">
+          <h3>Nosso universo</h3>
+
+          <p>
+            Um catálogo de objetos curiosos,
+            criações extraordinárias e descobertas inesperadas.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>LAZÚLI · UM CATÁLOGO FORA DO COMUM</p>
+        <span>© 2026 Lazúli. Todos os direitos reservados.</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
