@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /* ========================================
    LAZÚLI — ESTILIZAÇÃO GERAL
 ======================================== */
@@ -59,7 +59,6 @@ textarea {
     font: inherit;
 }
 
-
 /* ========================================
    ACESSIBILIDADE
 ======================================== */
@@ -69,12 +68,9 @@ textarea {
     top: -100px;
     left: 15px;
     z-index: 1000;
-
     padding: 10px 16px;
-
     background-color: var(--accent-dark);
     color: var(--white);
-
     border-radius: 4px;
 }
 
@@ -82,6 +78,10 @@ textarea {
     top: 15px;
 }
 
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
 
 /* ========================================
    CABEÇALHO E NAVEGAÇÃO
@@ -93,7 +93,7 @@ textarea {
 }
 
 .site-header .navbar {
-    padding: 12px 0;
+    padding: 14px 0;
 }
 
 .site-header .container {
@@ -105,45 +105,25 @@ textarea {
 .brand-lockup {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-
+    gap: 12px;
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
 
 .logo-lazuli {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    width: 55px;
-    height: 55px;
-
-    object-fit: contain;
-}
-
-/* Funciona tanto com o logo dentro de um span
-   quanto com a imagem recebendo a classe diretamente. */
-
-img.logo-lazuli,
-.logo-lazuli img {
     display: block;
-
+    flex-shrink: 0;
     width: 55px;
     height: 55px;
-
     object-fit: contain;
 }
 
 .brand-name {
     color: var(--accent-dark);
-
     font-family: "Cormorant Garamond", Georgia, serif;
     font-size: 2rem;
-    font-weight: 600;
-
+    font-weight: 700;
     letter-spacing: 1px;
     line-height: 1;
 }
@@ -152,14 +132,12 @@ img.logo-lazuli,
     color: var(--accent-dark);
     font-size: 0.95rem;
     font-weight: 500;
-
     transition: color 0.2s ease;
 }
 
 .site-header .nav-link:hover {
     color: var(--accent);
 }
-
 
 /* ========================================
    TÍTULOS E TEXTOS
@@ -171,7 +149,6 @@ h3,
 h4,
 h5 {
     color: var(--accent-dark);
-
     font-family: "Cormorant Garamond", Georgia, serif;
     font-weight: 600;
 }
@@ -191,16 +168,12 @@ p {
 
 .eyebrow {
     margin-bottom: 8px;
-
     color: var(--accent);
-
     font-size: 0.75rem;
     font-weight: 700;
-
     letter-spacing: 2px;
     text-transform: uppercase;
 }
-
 
 /* ========================================
    DESTAQUE / HERO
@@ -208,7 +181,6 @@ p {
 
 .hero {
     padding: 75px 0;
-
     background-color: var(--surface-dark);
 }
 
@@ -226,21 +198,16 @@ p {
     margin-top: 15px;
 }
 
-
 /* ========================================
    BOTÕES
 ======================================== */
 
 .btn-dark {
     padding: 10px 22px;
-
     background-color: var(--accent-dark);
     border: 1px solid var(--accent-dark);
-
     color: var(--white);
-
-    transition:
-        background-color 0.2s ease,
+    transition: background-color 0.2s ease,
         border-color 0.2s ease,
         transform 0.2s ease;
 }
@@ -248,9 +215,7 @@ p {
 .btn-dark:hover {
     background-color: var(--accent);
     border-color: var(--accent);
-
     color: var(--white);
-
     transform: translateY(-2px);
 }
 
@@ -265,7 +230,6 @@ p {
     color: var(--white);
 }
 
-
 /* ========================================
    FILTROS E PESQUISA
 ======================================== */
@@ -277,7 +241,6 @@ p {
 .filter-area .form-control,
 .filter-area .form-select {
     min-height: 45px;
-
     background-color: var(--surface-light);
     border: 1px solid var(--border);
     border-radius: 5px;
@@ -289,29 +252,22 @@ p {
     box-shadow: 0 0 0 0.2rem rgba(112, 44, 54, 0.12);
 }
 
-
 /* ========================================
    CARDS DE PRODUTOS
 ======================================== */
 
 .product-card {
     height: 100%;
-
     overflow: hidden;
-
     background-color: var(--surface-light);
-
     border: 1px solid var(--border);
     border-radius: 8px;
-
-    transition:
-        transform 0.25s ease,
+    transition: transform 0.25s ease,
         box-shadow 0.25s ease;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
-
     box-shadow: 0 8px 20px rgba(45, 36, 34, 0.09);
 }
 
@@ -329,10 +285,8 @@ p {
 
 .product-card .small {
     color: var(--accent) !important;
-
     font-size: 0.75rem;
     font-weight: 700;
-
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -341,26 +295,28 @@ p {
     margin-top: 8px;
 }
 
-
 /* ========================================
-   ILUSTRAÇÕES DOS PRODUTOS
+   IMAGENS DOS PRODUTOS
 ======================================== */
 
 .product-illustration {
     min-height: 220px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background-color: #f0e8dc;
-
     font-size: 5rem;
 }
 
+.product-illustration img {
+    width: 100%;
+    height: 220px;
+    padding: 15px;
+    object-fit: contain;
+}
 
 /* ========================================
-   PÁGINA DE DETALHES DO PRODUTO
+   DETALHES DO PRODUTO
 ======================================== */
 
 .product-page {
@@ -372,30 +328,22 @@ p {
     width: 100%;
     height: 450px;
     min-height: 350px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 25px;
-
     overflow: hidden;
-
     background-color: #f0e8dc;
-
     border: 1px solid var(--border);
     border-radius: 8px;
 }
 
 .product-detail-illustration img {
     display: block;
-
     width: auto;
     height: auto;
-
     max-width: 100%;
     max-height: 100%;
-
     object-fit: contain;
 }
 
@@ -405,25 +353,20 @@ p {
 
 .product-title {
     margin-bottom: 18px;
-
     color: var(--accent-dark);
-
     font-size: clamp(2.3rem, 4vw, 3.4rem);
     line-height: 1.1;
 }
 
 .product-description {
     max-width: 550px;
-
     margin: 20px 0;
-
     font-size: 1.05rem;
     line-height: 1.8;
 }
 
 .price {
     margin: 15px 0;
-
     color: var(--accent);
     font-size: 1.25rem;
     font-weight: 700;
@@ -431,16 +374,13 @@ p {
 
 .price-large {
     margin: 20px 0;
-
     color: var(--accent);
-
     font-size: 2rem;
     font-weight: 700;
 }
 
-
 /* ========================================
-   DETALHES E INFORMAÇÕES DO PRODUTO
+   INFORMAÇÕES DO PRODUTO
 ======================================== */
 
 .product-details {
@@ -454,13 +394,11 @@ p {
 
 .product-detail-item {
     padding: 15px 0;
-
     border-bottom: 1px solid var(--border);
 }
 
 .product-detail-item h3 {
     margin-bottom: 5px;
-
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.9rem;
     font-weight: 700;
@@ -471,7 +409,6 @@ p {
     font-size: 0.95rem;
 }
 
-
 /* ========================================
    COMPRA E QUANTIDADE
 ======================================== */
@@ -479,14 +416,12 @@ p {
 .product-purchase {
     margin-top: 30px;
     padding-top: 25px;
-
     border-top: 1px solid var(--border);
 }
 
 .quantity-field {
     max-width: 120px;
     min-height: 45px;
-
     background-color: var(--surface-light);
     border: 1px solid var(--border);
     border-radius: 5px;
@@ -500,15 +435,11 @@ p {
 .product-buy-button {
     width: 100%;
     max-width: 350px;
-
     padding: 13px 25px;
-
     background-color: var(--accent-dark);
     border: 1px solid var(--accent-dark);
-
     color: var(--white);
     font-weight: 600;
-
     transition: background-color 0.2s ease;
 }
 
@@ -522,7 +453,6 @@ p {
     font-size: 0.9rem;
 }
 
-
 /* ========================================
    FORMULÁRIOS
 ======================================== */
@@ -535,19 +465,15 @@ p {
 .form-control,
 .form-select {
     min-height: 45px;
-
     background-color: var(--surface-light);
     border: 1px solid var(--border);
-
     border-radius: 5px;
 }
 
 .form-control:focus,
 .form-select:focus {
     background-color: var(--surface-light);
-
     border-color: var(--accent);
-
     box-shadow: 0 0 0 0.2rem rgba(112, 44, 54, 0.12);
 }
 
@@ -565,23 +491,136 @@ legend {
     font-weight: 600;
 }
 
+/* ========================================
+   CARRINHO DE COMPRAS
+======================================== */
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 18px;
+    background-color: var(--surface-light);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.cart-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    background-color: #f0e8dc;
+    border-radius: 6px;
+}
+
+.cart-item h3 {
+    margin-bottom: 6px;
+    font-size: 1.4rem;
+}
+
+.cart-item p {
+    margin-bottom: 6px;
+}
+
+.cart-item .form-control {
+    max-width: 90px;
+}
+
+.cart-item button {
+    white-space: nowrap;
+}
+
+.cart-summary {
+    padding: 25px;
+    background-color: var(--surface-light);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.cart-summary h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.cart-summary strong {
+    color: var(--accent-dark);
+}
+
+#carrinhoVazio {
+    padding: 35px 20px;
+    background-color: var(--surface-light);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-align: center;
+}
 
 /* ========================================
    CHECKOUT E RESUMO DA COMPRA
 ======================================== */
 
-.checkout-summary {
-    padding: 25px;
+#checkoutForm > .mb-4 {
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--border);
+}
 
+#checkoutForm h2 {
+    margin-bottom: 22px;
+    font-size: 1.9rem;
+}
+
+#checkoutForm .form-control,
+#checkoutForm .form-select {
+    min-height: 48px;
+    padding: 10px 13px;
     background-color: var(--surface-light);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    color: var(--ink);
+}
 
+#checkoutForm .form-control::placeholder {
+    color: #a69a90;
+}
+
+#checkoutForm .form-control:focus,
+#checkoutForm .form-select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(112, 44, 54, 0.12);
+}
+
+#buscarCep {
+    border-color: var(--accent);
+    color: var(--accent-dark);
+    transition: 0.2s ease;
+}
+
+#buscarCep:hover {
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+#cepFeedback,
+#resumoFeedback {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.checkout-summary {
+    position: sticky;
+    top: 25px;
+    padding: 28px;
+    background-color: var(--surface-light);
     border: 1px solid var(--border);
     border-radius: 8px;
+    box-shadow: 0 5px 18px rgba(45, 36, 34, 0.05);
 }
 
 .checkout-summary h2 {
-    margin-bottom: 20px;
-    font-size: 1.7rem;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+    font-size: 2rem;
 }
 
 .summary-item {
@@ -589,9 +628,7 @@ legend {
     align-items: center;
     justify-content: space-between;
     gap: 15px;
-
-    padding: 15px 0;
-
+    padding: 16px 0;
     border-bottom: 1px solid var(--border);
 }
 
@@ -601,23 +638,64 @@ legend {
 
 .summary-item p {
     margin: 0;
+    color: var(--ink);
+    font-size: 0.9rem;
 }
 
-.summary-total {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.summary-item strong {
+    color: var(--accent);
+    white-space: nowrap;
+}
 
-    margin-top: 20px;
-    padding-top: 15px;
+.checkout-summary .d-flex {
+    color: var(--muted);
+}
 
-    border-top: 1px solid var(--border);
-
+.checkout-summary #resumoQuantidade,
+.checkout-summary #resumoTotal {
     color: var(--accent-dark);
-    font-size: 1.2rem;
-    font-weight: 700;
 }
 
+.checkout-summary #resumoTotal {
+    font-size: 1.25rem;
+}
+
+#checkoutForm .form-check-input {
+    border-color: var(--border);
+}
+
+#checkoutForm .form-check-input:checked {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+#checkoutForm .form-check-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(112, 44, 54, 0.12);
+}
+
+#concluirPedido {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 8px;
+    background-color: var(--accent-dark);
+    border: 1px solid var(--accent-dark);
+    color: var(--white);
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    transition: 0.2s ease;
+}
+
+#concluirPedido:hover:not(:disabled) {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+#concluirPedido:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
 
 /* ========================================
    OBSERVAÇÕES E MENSAGENS
@@ -626,11 +704,8 @@ legend {
 .note,
 .info-box {
     padding: 18px;
-
     background-color: var(--surface-dark);
-
     border-left: 4px solid var(--accent);
-
     border-radius: 4px;
 }
 
@@ -639,18 +714,14 @@ legend {
     margin: 0;
 }
 
-
 /* ========================================
    PÁGINA DE SUCESSO
 ======================================== */
 
 .success-panel {
     max-width: 750px;
-
     padding: 45px 35px;
-
     background-color: var(--surface-light);
-
     border: 1px solid var(--border);
     border-radius: 10px;
 }
@@ -658,16 +729,12 @@ legend {
 .success-icon {
     width: 65px;
     height: 65px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     margin: 0 auto 25px;
-
     background-color: var(--accent-soft);
     border-radius: 50%;
-
     color: var(--accent-dark);
     font-size: 2rem;
     font-weight: 700;
@@ -684,11 +751,8 @@ legend {
 .order-data {
     margin: 30px 0;
     padding: 20px;
-
     background-color: var(--surface);
-
     border-radius: 6px;
-
     text-align: left;
 }
 
@@ -696,9 +760,7 @@ legend {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-
     padding: 12px 0;
-
     border-bottom: 1px solid var(--border);
 }
 
@@ -713,13 +775,10 @@ legend {
 
 .order-data dd {
     margin: 0;
-
     color: var(--accent-dark);
     font-weight: 700;
-
     text-align: right;
 }
-
 
 /* ========================================
    RODAPÉ
@@ -728,7 +787,6 @@ legend {
 .site-footer {
     margin-top: 60px;
     padding: 45px 0 20px;
-
     background-color: var(--footer-bg);
     color: var(--footer-text);
 }
@@ -742,7 +800,6 @@ legend {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1.3fr;
     gap: 45px;
-
     padding-bottom: 35px;
 }
 
@@ -758,11 +815,8 @@ legend {
     display: flex;
     align-items: center;
     gap: 12px;
-
     margin-bottom: 15px;
-
     color: var(--footer-text);
-
     font-family: "Cormorant Garamond", Georgia, serif;
     font-size: 2rem;
     font-weight: 600;
@@ -771,14 +825,12 @@ legend {
 .footer-logo img {
     width: 50px;
     height: 50px;
-
     object-fit: contain;
 }
 
 .footer-brand p,
 .footer-about p {
     max-width: 300px;
-
     color: #e0d3c8;
     font-size: 0.9rem;
 }
@@ -786,19 +838,15 @@ legend {
 .footer-navigation h3,
 .footer-about h3 {
     margin-bottom: 15px;
-
     color: var(--accent-soft);
-
     font-family: "Cormorant Garamond", Georgia, serif;
     font-size: 1.4rem;
 }
 
 .footer-navigation a {
     margin-bottom: 8px;
-
     color: #e0d3c8;
     font-size: 0.9rem;
-
     transition: color 0.2s ease;
 }
 
@@ -811,20 +859,15 @@ legend {
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-
     padding-top: 20px;
-
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .footer-bottom p {
     margin: 0;
-
     color: var(--accent-soft);
-
     font-size: 0.75rem;
     font-weight: 700;
-
     letter-spacing: 1.5px;
 }
 
@@ -832,7 +875,6 @@ legend {
     color: #cbbdb4;
     font-size: 0.75rem;
 }
-
 
 /* ========================================
    CARROSSEL
@@ -846,7 +888,6 @@ legend {
 .carousel img {
     width: 100%;
     height: 420px;
-
     object-fit: cover;
 }
 
@@ -854,7 +895,6 @@ legend {
 .carousel-control-next-icon {
     filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
 }
-
 
 /* ========================================
    RESPONSIVIDADE — TABLETS
@@ -879,8 +919,12 @@ legend {
         grid-column: 1 / -1;
     }
 
-}
+    .checkout-summary {
+        position: static;
+        margin-top: 10px;
+    }
 
+}
 
 /* ========================================
    RESPONSIVIDADE — CELULARES
@@ -900,9 +944,7 @@ legend {
         gap: 7px;
     }
 
-    .logo-lazuli,
-    img.logo-lazuli,
-    .logo-lazuli img {
+    .logo-lazuli {
         width: 45px;
         height: 45px;
     }
@@ -911,8 +953,9 @@ legend {
         font-size: 1.7rem;
     }
 
-    .site-header .nav-link {
-        font-size: 0.85rem;
+    .site-header .btn {
+        padding: 7px 10px;
+        font-size: 0.8rem;
     }
 
     .hero {
@@ -923,10 +966,13 @@ legend {
         min-height: 180px;
     }
 
+    .product-illustration img {
+        height: 180px;
+    }
+
     .product-detail-illustration {
         height: 290px;
         min-height: 250px;
-
         padding: 15px;
     }
 
@@ -948,6 +994,38 @@ legend {
 
     .product-buy-button {
         max-width: 100%;
+    }
+
+    .cart-item {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .cart-item img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .cart-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .checkout-summary {
+        padding: 20px;
+    }
+
+    .checkout-summary h2 {
+        font-size: 1.7rem;
+    }
+
+    #checkoutForm h2 {
+        font-size: 1.65rem;
+    }
+
+    #buscarCep {
+        padding: 8px 12px;
+        font-size: 0.85rem;
     }
 
     .success-panel {
@@ -988,7 +1066,6 @@ legend {
 
 }
 
-
 /* ========================================
    ACESSIBILIDADE — MOVIMENTO
 ======================================== */
@@ -1005,56 +1082,3 @@ legend {
     }
 
 }
-
-
-/* ========================================
-   FOCO VISÍVEL
-======================================== */
-
-:focus-visible {
-    outline: 3px solid var(--accent);
-    outline-offset: 3px;
-}
-=======
-/* CSS propositalmente simples. A ideia é que os estudantes o evoluam. */
-:root {
-  --surface: #f6f4ef;
-  --ink: #222;
-  --muted: #666;
-  --border: #d9d5cc;
-  --accent-soft: #e8ff7a;
-}
-
-body { color: var(--ink); background: #fff; }
-.skip-link { position: absolute; top: -60px; left: 1rem; z-index: 1000; padding: .75rem 1rem; background: #000; color: #fff; }
-.skip-link:focus { top: 1rem; }
-.site-header { border-bottom: 1px solid var(--border); background: #fff; }
-.hero { background: var(--surface); border-bottom: 1px solid var(--border); }
-.eyebrow { font-size: .85rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-.product-filter { width: min(100%, 320px); }
-.product-card { border: 1px solid var(--border); border-radius: 8px; box-shadow: none; }
-.product-card:hover { transform: translateY(-2px); }
-.product-illustration, .product-detail-illustration { display: grid; place-items: center; background: var(--surface); border: 1px solid var(--border); }
-.product-illustration { min-height: 190px; font-size: 5rem; }
-.product-detail-illustration { min-height: 440px; font-size: 10rem; border-radius: 10px; }
-.price { font-size: 1.2rem; font-weight: 700; }
-.price-large { font-size: 2rem; }
-.quantity-field { max-width: 120px; }
-.learning-note, .summary-box { padding: 1.25rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
-.summary-box { position: sticky; top: 1rem; }
-.success-panel { max-width: 720px; padding: 3rem 1.5rem; }
-.success-icon { display: grid; place-items: center; width: 72px; height: 72px; margin: 0 auto 1.5rem; border-radius: 50%; background: var(--accent-soft); font-size: 2rem; font-weight: 800; }
-.order-data { display: grid; gap: 1rem; margin: 2rem 0; text-align: left; }
-.order-data > div { padding: 1rem; border: 1px solid var(--border); }
-.order-data dt { font-size: .85rem; color: var(--muted); }
-.order-data dd { margin: .25rem 0 0; font-weight: 700; }
-.site-footer { margin-top: 4rem; background: #171717; color: #fff; }
-
-/* TODO didático:
-   - melhorar estados de hover/focus;
-   - revisar espaçamentos;
-   - criar uma identidade visual mais consistente;
-   - revisar telas muito pequenas;
-   - avaliar prefers-reduced-motion antes de adicionar animações.
-*/
->>>>>>> 73195d0111e1759fd1eed49ed87fcdc2fe319f41

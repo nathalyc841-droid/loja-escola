@@ -1,51 +1,21 @@
 
+// ==========================================
 // CATÁLOGO DOS PRODUTOS
+// ==========================================
+
 const produtos = [
-  {
-    id: 1,
-    nome: "Garfo Aquecedor de Bolso",
-    categoria: "Utensílios extraordinários",
-    preco: 75,
-    imagem: "imagem loja escola/garfo.jpeg"
-  },
-  {
-    id: 2,
-    nome: "Rolo de Papel para Presentes Infinitos",
-    categoria: "Embalagens fantásticas",
-    preco: 1200,
-    imagem: "imagem loja escola/papel.jpeg"
-  },
-  {
-    id: 3,
-    nome: "Abajur Monocromático",
-    categoria: "Iluminação extraordinária",
-    preco: 8990,
-    imagem: "imagem loja escola/luminaria.jpeg"
-  },
-  {
-    id: 4,
-    nome: "Kit Utensílio para Formigas",
-    categoria: "Microequipamentos",
-    preco: 37,
-    imagem: "imagem loja escola/formiga.jpeg"
-  },
-  {
-    id: 5,
-    nome: "Drone",
-    categoria: "Tecnologia sideral",
-    preco: 248000,
-    imagem: "imagem loja escola/drone.jpeg"
-  },
-  {
-    id: 6,
-    nome: "Pano de Neblina",
-    categoria: "Vexis",
-    preco: 14,
-    imagem: "imagem loja escola/pano.jpeg"
-  }
+  { id: 1, nome: "Garfo Aquecedor de Bolso", categoria: "Utensílios extraordinários", preco: 75, imagem: "imagem loja escola/garfo.jpeg" },
+  { id: 2, nome: "Rolo de Papel para Presentes Infinitos", categoria: "Embalagens fantásticas", preco: 1200, imagem: "imagem loja escola/papel.jpeg" },
+  { id: 3, nome: "Abajur Monocromático", categoria: "Iluminação extraordinária", preco: 8990, imagem: "imagem loja escola/luminaria.jpeg" },
+  { id: 4, nome: "Kit Utensílio para Formigas", categoria: "Microequipamentos", preco: 37, imagem: "imagem loja escola/formiga.jpeg" },
+  { id: 5, nome: "Drone de Delivery Sideral", categoria: "Tecnologia sideral", preco: 248000, imagem: "imagem loja escola/drone.jpeg" },
+  { id: 6, nome: "Pano de Neblina", categoria: "Vexis", preco: 14, imagem: "imagem loja escola/pano.jpeg" }
 ];
 
+// ==========================================
 // ELEMENTOS DO HTML
+// ==========================================
+
 const listaCarrinho = document.querySelector("#listaCarrinho");
 const carrinhoVazio = document.querySelector("#carrinhoVazio");
 const subtotalCarrinho = document.querySelector("#subtotalCarrinho");
@@ -53,10 +23,54 @@ const totalCarrinho = document.querySelector("#totalCarrinho");
 const feedbackCarrinho = document.querySelector("#feedbackCarrinho");
 const finalizarCompra = document.querySelector("#finalizarCompra");
 
-// RECUPERA OS PRODUTOS ARMAZENADOS
-let carrinho = JSON.parse(sessionStorage.getItem("carrinho")) || [];
+// Verifica se os elementos necessários existem
+if (
+  !listaCarrinho ||
+  !carrinhoVazio ||
+  !subtotalCarrinho ||
+  !totalCarrinho ||
+  !feedbackCarrinho ||
+  !finalizarCompra
+) {
+  console.error("Não foi possível encontrar todos os elementos do carrinho no HTML.");
+} else {
 
-// FORMATA OS VALORES EM REAIS
+// ==========================================
+// RECUPERA O CARRINHO
+// ==========================================
+
+let carrinho = [];
+
+try {
+  const dadosSalvos = JSON.parse(sessionStorage.getItem("carrinho")) || [];
+
+  if (Array.isArray(dadosSalvos)) {
+    carrinho = dadosSalvos.filter((item) => {
+      const produtoExiste = produtos.some(
+        (produto) => produto.id === Number(item.id)
+      );
+
+      const quantidadeValida =
+        Number.isInteger(Number(item.quantidade)) &&
+        Number(item.quantidade) >= 1 &&
+        Number(item.quantidade) <= 10;
+
+      return produtoExiste && quantidadeValida;
+    }).map((item) => ({
+      id: Number(item.id),
+      quantidade: Number(item.quantidade)
+    }));
+  }
+
+} catch (erro) {
+  console.error("Erro ao recuperar o carrinho:", erro);
+  carrinho = [];
+}
+
+// ==========================================
+// FORMATA OS VALORES
+// ==========================================
+
 function formatarMoeda(valor) {
   return valor.toLocaleString("pt-BR", {
     style: "currency",
@@ -64,20 +78,27 @@ function formatarMoeda(valor) {
   });
 }
 
-// EXIBE OS PRODUTOS DO CARRINHO
+// ==========================================
+// EXIBE OS PRODUTOS
+// ==========================================
+
 function exibirCarrinho() {
   listaCarrinho.innerHTML = "";
 
   let subtotal = 0;
 
-  carrinhoVazio.style.display = carrinho.length === 0 ? "block" : "none";
+  carrinhoVazio.style.display =
+    carrinho.length === 0 ? "block" : "none";
 
   carrinho.forEach((item) => {
-    const produto = produtos.find((p) => p.id === item.id);
+    const produto = produtos.find(
+      (p) => p.id === item.id
+    );
 
     if (!produto) return;
 
     const totalProduto = produto.preco * item.quantidade;
+
     subtotal += totalProduto;
 
     const elemento = document.createElement("article");
@@ -86,7 +107,6 @@ function exibirCarrinho() {
 
     elemento.innerHTML = `
       <div class="row align-items-center g-3">
-
         <div class="col-4 col-md-3">
           <img
             src="${produto.imagem}"
@@ -96,7 +116,6 @@ function exibirCarrinho() {
         </div>
 
         <div class="col-8 col-md-9">
-
           <p class="small text-secondary mb-1">
             ${produto.categoria}
           </p>
@@ -108,7 +127,6 @@ function exibirCarrinho() {
           </p>
 
           <div class="d-flex align-items-center gap-2 flex-wrap">
-
             <label>
               Quantidade:
               <input
@@ -127,13 +145,13 @@ function exibirCarrinho() {
               data-id="${produto.id}">
               Remover
             </button>
-
           </div>
 
           <p class="mt-2 mb-0">
-            <strong>Subtotal: ${formatarMoeda(totalProduto)}</strong>
+            <strong>
+              Subtotal: ${formatarMoeda(totalProduto)}
+            </strong>
           </p>
-
         </div>
       </div>
     `;
@@ -144,10 +162,15 @@ function exibirCarrinho() {
   subtotalCarrinho.textContent = formatarMoeda(subtotal);
   totalCarrinho.textContent = formatarMoeda(subtotal);
 
+  finalizarCompra.disabled = carrinho.length === 0;
+
   sessionStorage.setItem("carrinho", JSON.stringify(carrinho));
 }
 
+// ==========================================
 // REMOVE UM PRODUTO
+// ==========================================
+
 listaCarrinho.addEventListener("click", (event) => {
   const botao = event.target.closest(".removerProduto");
 
@@ -162,15 +185,22 @@ listaCarrinho.addEventListener("click", (event) => {
   feedbackCarrinho.textContent = "Produto removido do carrinho.";
 });
 
+// ==========================================
 // ALTERA A QUANTIDADE
+// ==========================================
+
 listaCarrinho.addEventListener("change", (event) => {
-  if (!event.target.classList.contains("quantidadeProduto")) return;
+  if (!event.target.classList.contains("quantidadeProduto")) {
+    return;
+  }
 
   const id = Number(event.target.dataset.id);
   const quantidade = Number(event.target.value);
 
   if (!Number.isInteger(quantidade) || quantidade < 1 || quantidade > 10) {
-    feedbackCarrinho.textContent = "Escolha uma quantidade entre 1 e 10.";
+    feedbackCarrinho.textContent =
+      "Escolha uma quantidade entre 1 e 10.";
+
     exibirCarrinho();
     return;
   }
@@ -179,22 +209,32 @@ listaCarrinho.addEventListener("change", (event) => {
 
   if (item) {
     item.quantidade = quantidade;
-  }
 
-  feedbackCarrinho.textContent = "";
-  exibirCarrinho();
+    feedbackCarrinho.textContent = "Quantidade atualizada.";
+
+    exibirCarrinho();
+  }
 });
 
-// BOTÃO DE FINALIZAR COMPRA
-finalizarCompra?.addEventListener("click", () => {
+// ==========================================
+// FINALIZAR COMPRA
+// ==========================================
+
+finalizarCompra.addEventListener("click", () => {
   if (carrinho.length === 0) {
     feedbackCarrinho.textContent =
       "Adicione pelo menos um produto antes de finalizar a compra.";
+
     return;
   }
 
   window.location.href = "checkout.html";
 });
 
+// ==========================================
 // PRIMEIRA EXIBIÇÃO
+// ==========================================
+
 exibirCarrinho();
+
+}
