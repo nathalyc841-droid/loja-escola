@@ -1,0 +1,1016 @@
+/* ========================================
+   LAZÚLI — ESTILIZAÇÃO GERAL
+======================================== */
+
+:root {
+    --surface: #f6f1e8;
+    --surface-light: #fbf8f2;
+    --surface-dark: #e9dfd0;
+
+    --ink: #2d2422;
+    --muted: #766b63;
+
+    --border: #ded3c4;
+
+    --accent: #702c36;
+    --accent-dark: #321b25;
+    --accent-soft: #e8d9b5;
+
+    --white: #ffffff;
+
+    --footer-bg: #321b25;
+    --footer-text: #f6f1e8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--surface);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent-dark);
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+/* ========================================
+   ACESSIBILIDADE
+======================================== */
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 15px;
+    z-index: 1000;
+
+    padding: 10px 16px;
+
+    background-color: var(--accent-dark);
+    color: var(--white);
+
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    top: 15px;
+}
+
+
+/* ========================================
+   CABEÇALHO E NAVEGAÇÃO
+======================================== */
+
+.site-header {
+    background-color: var(--surface-light);
+    border-bottom: 1px solid var(--border);
+}
+
+.site-header .navbar {
+    padding: 12px 0;
+}
+
+.site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand-lockup {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 0;
+    padding: 0;
+}
+
+.logo-lazuli {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 55px;
+    height: 55px;
+
+    object-fit: contain;
+}
+
+/* Funciona tanto com o logo dentro de um span
+   quanto com a imagem recebendo a classe diretamente. */
+
+img.logo-lazuli,
+.logo-lazuli img {
+    display: block;
+
+    width: 55px;
+    height: 55px;
+
+    object-fit: contain;
+}
+
+.brand-name {
+    color: var(--accent-dark);
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 2rem;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.site-header .nav-link {
+    color: var(--accent-dark);
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+}
+
+.site-header .nav-link:hover {
+    color: var(--accent);
+}
+
+
+/* ========================================
+   TÍTULOS E TEXTOS
+======================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--accent-dark);
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+p {
+    color: var(--muted);
+}
+
+.eyebrow {
+    margin-bottom: 8px;
+
+    color: var(--accent);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* ========================================
+   DESTAQUE / HERO
+======================================== */
+
+.hero {
+    padding: 75px 0;
+
+    background-color: var(--surface-dark);
+}
+
+.hero h1 {
+    max-width: 650px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 550px;
+    font-size: 1.05rem;
+}
+
+.hero .btn {
+    margin-top: 15px;
+}
+
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+.btn-dark {
+    padding: 10px 22px;
+
+    background-color: var(--accent-dark);
+    border: 1px solid var(--accent-dark);
+
+    color: var(--white);
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn-dark:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+
+    color: var(--white);
+
+    transform: translateY(-2px);
+}
+
+.btn-outline-dark {
+    color: var(--accent-dark);
+    border-color: var(--accent-dark);
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--accent-dark);
+    border-color: var(--accent-dark);
+    color: var(--white);
+}
+
+
+/* ========================================
+   FILTROS E PESQUISA
+======================================== */
+
+.filter-area {
+    margin-bottom: 30px;
+}
+
+.filter-area .form-control,
+.filter-area .form-select {
+    min-height: 45px;
+
+    background-color: var(--surface-light);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+}
+
+.filter-area .form-control:focus,
+.filter-area .form-select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 0.2rem rgba(112, 44, 54, 0.12);
+}
+
+
+/* ========================================
+   CARDS DE PRODUTOS
+======================================== */
+
+.product-card {
+    height: 100%;
+
+    overflow: hidden;
+
+    background-color: var(--surface-light);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 20px rgba(45, 36, 34, 0.09);
+}
+
+.product-card .card-body {
+    padding: 22px;
+}
+
+.product-card h3 {
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 0.95rem;
+}
+
+.product-card .small {
+    color: var(--accent) !important;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.product-card .btn {
+    margin-top: 8px;
+}
+
+
+/* ========================================
+   ILUSTRAÇÕES DOS PRODUTOS
+======================================== */
+
+.product-illustration {
+    min-height: 220px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #f0e8dc;
+
+    font-size: 5rem;
+}
+
+
+/* ========================================
+   PÁGINA DE DETALHES DO PRODUTO
+======================================== */
+
+.product-page {
+    padding-top: 35px;
+    padding-bottom: 70px;
+}
+
+.product-detail-illustration {
+    width: 100%;
+    height: 450px;
+    min-height: 350px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    overflow: hidden;
+
+    background-color: #f0e8dc;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.product-detail-illustration img {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+}
+
+.product-information {
+    padding: 5px 0;
+}
+
+.product-title {
+    margin-bottom: 18px;
+
+    color: var(--accent-dark);
+
+    font-size: clamp(2.3rem, 4vw, 3.4rem);
+    line-height: 1.1;
+}
+
+.product-description {
+    max-width: 550px;
+
+    margin: 20px 0;
+
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.price {
+    margin: 15px 0;
+
+    color: var(--accent);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.price-large {
+    margin: 20px 0;
+
+    color: var(--accent);
+
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   DETALHES E INFORMAÇÕES DO PRODUTO
+======================================== */
+
+.product-details {
+    margin-top: 35px;
+}
+
+.product-details h2 {
+    margin-bottom: 18px;
+    font-size: 1.7rem;
+}
+
+.product-detail-item {
+    padding: 15px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.product-detail-item h3 {
+    margin-bottom: 5px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.product-detail-item p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+
+/* ========================================
+   COMPRA E QUANTIDADE
+======================================== */
+
+.product-purchase {
+    margin-top: 30px;
+    padding-top: 25px;
+
+    border-top: 1px solid var(--border);
+}
+
+.quantity-field {
+    max-width: 120px;
+    min-height: 45px;
+
+    background-color: var(--surface-light);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+}
+
+.quantity-field:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 0.2rem rgba(112, 44, 54, 0.12);
+}
+
+.product-buy-button {
+    width: 100%;
+    max-width: 350px;
+
+    padding: 13px 25px;
+
+    background-color: var(--accent-dark);
+    border: 1px solid var(--accent-dark);
+
+    color: var(--white);
+    font-weight: 600;
+
+    transition: background-color 0.2s ease;
+}
+
+.product-buy-button:hover {
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+#produtoFeedback {
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
+
+/* ========================================
+   FORMULÁRIOS
+======================================== */
+
+.form-label {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.form-control,
+.form-select {
+    min-height: 45px;
+
+    background-color: var(--surface-light);
+    border: 1px solid var(--border);
+
+    border-radius: 5px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--surface-light);
+
+    border-color: var(--accent);
+
+    box-shadow: 0 0 0 0.2rem rgba(112, 44, 54, 0.12);
+}
+
+textarea.form-control {
+    min-height: 110px;
+}
+
+fieldset {
+    border: 0;
+}
+
+legend {
+    color: var(--accent-dark);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 600;
+}
+
+
+/* ========================================
+   CHECKOUT E RESUMO DA COMPRA
+======================================== */
+
+.checkout-summary {
+    padding: 25px;
+
+    background-color: var(--surface-light);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.checkout-summary h2 {
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.summary-item:last-child {
+    border-bottom: 0;
+}
+
+.summary-item p {
+    margin: 0;
+}
+
+.summary-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 20px;
+    padding-top: 15px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--accent-dark);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   OBSERVAÇÕES E MENSAGENS
+======================================== */
+
+.note,
+.info-box {
+    padding: 18px;
+
+    background-color: var(--surface-dark);
+
+    border-left: 4px solid var(--accent);
+
+    border-radius: 4px;
+}
+
+.note p,
+.info-box p {
+    margin: 0;
+}
+
+
+/* ========================================
+   PÁGINA DE SUCESSO
+======================================== */
+
+.success-panel {
+    max-width: 750px;
+
+    padding: 45px 35px;
+
+    background-color: var(--surface-light);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.success-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 25px;
+
+    background-color: var(--accent-soft);
+    border-radius: 50%;
+
+    color: var(--accent-dark);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.success-panel h1 {
+    margin-bottom: 20px;
+}
+
+.success-panel .lead {
+    margin-bottom: 30px;
+}
+
+.order-data {
+    margin: 30px 0;
+    padding: 20px;
+
+    background-color: var(--surface);
+
+    border-radius: 6px;
+
+    text-align: left;
+}
+
+.order-data div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.order-data div:last-child {
+    border-bottom: 0;
+}
+
+.order-data dt {
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.order-data dd {
+    margin: 0;
+
+    color: var(--accent-dark);
+    font-weight: 700;
+
+    text-align: right;
+}
+
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+.site-footer {
+    margin-top: 60px;
+    padding: 45px 0 20px;
+
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+}
+
+.site-footer p,
+.site-footer span {
+    color: var(--footer-text);
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.3fr;
+    gap: 45px;
+
+    padding-bottom: 35px;
+}
+
+.footer-brand,
+.footer-navigation,
+.footer-about {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 15px;
+
+    color: var(--footer-text);
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.footer-logo img {
+    width: 50px;
+    height: 50px;
+
+    object-fit: contain;
+}
+
+.footer-brand p,
+.footer-about p {
+    max-width: 300px;
+
+    color: #e0d3c8;
+    font-size: 0.9rem;
+}
+
+.footer-navigation h3,
+.footer-about h3 {
+    margin-bottom: 15px;
+
+    color: var(--accent-soft);
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1.4rem;
+}
+
+.footer-navigation a {
+    margin-bottom: 8px;
+
+    color: #e0d3c8;
+    font-size: 0.9rem;
+
+    transition: color 0.2s ease;
+}
+
+.footer-navigation a:hover {
+    color: var(--accent-soft);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: var(--accent-soft);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.footer-bottom span {
+    color: #cbbdb4;
+    font-size: 0.75rem;
+}
+
+
+/* ========================================
+   CARROSSEL
+======================================== */
+
+.carousel {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.carousel img {
+    width: 100%;
+    height: 420px;
+
+    object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+}
+
+
+/* ========================================
+   RESPONSIVIDADE — TABLETS
+======================================== */
+
+@media (max-width: 991px) {
+
+    .hero {
+        padding: 55px 0;
+    }
+
+    .product-detail-illustration {
+        height: 380px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+/* ========================================
+   RESPONSIVIDADE — CELULARES
+======================================== */
+
+@media (max-width: 576px) {
+
+    body {
+        font-size: 0.95rem;
+    }
+
+    .site-header .navbar {
+        padding: 10px 0;
+    }
+
+    .brand-lockup {
+        gap: 7px;
+    }
+
+    .logo-lazuli,
+    img.logo-lazuli,
+    .logo-lazuli img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .brand-name {
+        font-size: 1.7rem;
+    }
+
+    .site-header .nav-link {
+        font-size: 0.85rem;
+    }
+
+    .hero {
+        padding: 40px 0;
+    }
+
+    .product-illustration {
+        min-height: 180px;
+    }
+
+    .product-detail-illustration {
+        height: 290px;
+        min-height: 250px;
+
+        padding: 15px;
+    }
+
+    .product-detail-illustration img {
+        max-height: 260px;
+    }
+
+    .product-title {
+        font-size: 2.3rem;
+    }
+
+    .product-description {
+        font-size: 0.95rem;
+    }
+
+    .price-large {
+        font-size: 1.7rem;
+    }
+
+    .product-buy-button {
+        max-width: 100%;
+    }
+
+    .success-panel {
+        padding: 30px 18px;
+    }
+
+    .order-data {
+        padding: 15px;
+    }
+
+    .order-data div {
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .order-data dd {
+        text-align: left;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .carousel img {
+        height: 250px;
+    }
+
+}
+
+
+/* ========================================
+   ACESSIBILIDADE — MOVIMENTO
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+}
+
+
+/* ========================================
+   FOCO VISÍVEL
+======================================== */
+
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
